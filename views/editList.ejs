@@ -1,0 +1,88 @@
+<%- include("partials/manageHeader.ejs") %>
+
+<div class="container">
+    <div class="artlist">
+        <% if (locals.articles) { %>
+            <% for (let i = 0; i < articles.length; i+=2) { %>
+                <div class="article-row">
+                    <div class="article-item">
+                        <div class="title"><%=articles[i].title %></div>
+                        <div class="oper-item">
+                            <form style="display: inline;" action="/manage/editList/form/recommend/<%=articles[i]._id %>" method="post">
+                            <% if (articles[i].recommend === true) { %>
+                                <input type="checkbox" id="recommend" name="recommend" checked>
+                            <% } else { %>
+                                <input type="checkbox" id="recommend" name="recommend">
+                            <% } %>
+                                <label for="recommend"> Recommend</label>
+                            </form>
+                            <div class="right-side">
+                                <a href="/manage/editList/edit?articleId=<%=articles[i]._id %>" target="_blank">edit</a>
+                                <a class="delete" id="<%=articles[i]._id %>" href="javascript:void(0);">delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="verticle-line"></div>
+                    <% if (i + 1 < articles.length) { %>
+                    <div class="article-item">
+                        <div class="title"><%=articles[i + 1].title %></div>
+                        <div class="oper-item">
+                            <form style="display: inline;" action="/manage/editList/form/recommend/<%=articles[i + 1]._id %>" method="post">
+                                <% if (articles[i + 1].recommend === true) { %>
+                                    <input type="checkbox" id="recommend" name="recommend" checked>
+                                <% } else { %>
+                                    <input type="checkbox" id="recommend" name="recommend">
+                                <% } %>
+                                <label for="recommend"> Recommend</label>
+                            </form>
+                            <div class="right-side">
+                                <a href="/manage/editList/edit?articleId=<%=articles[i + 1]._id %>" target="_blank">edit</a>
+                                <a class="delete" id="<%=articles[i + 1]._id %>" href="javascript:void(0);">delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } else { %>
+                        <div class="article-item" style="visibility: hidden;">
+                            <div class="title"></div>
+                            <div class="oper-item">
+                                <form style="display: inline;" action="">
+                                    <input type="checkbox" id="recommend" name="recommend">
+                                    <label for="recommend"> Recommend</label>
+                                </form>
+                                <div class="right-side">
+                                    <a href="">edit</a>
+                                    <a href="">delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="horizontal-line"></div>
+            <% } %>
+        <% } %>
+    </div>
+    <ul class="pagination">
+        <% if (locals.articles && typeof pageNum !== 'undefined' && locals.currPageNum !== 'undefined') { %>
+          <% if (currPageNum === 1) { %>
+            <li class="disabled"><i class="material-icons">chevron_left</i></a></li>
+          <% } else { %>
+            <li class="waves-effect"><a href="/manage/editList/page/<%=currPageNum - 1  %>"><i class="material-icons">chevron_left</i></a></li>
+            <% } %>
+          <% for (let i = 0; i < pageNum; i++) { %>
+            <% if (currPageNum === (i + 1)) { %>
+              <li class="active"><a href="/manage/editList/page/<%=i+1 %>"><%=i+1 %></a></li>
+            <% } else { %>
+              <li class="waves-effect"><a href="/manage/editList/page/<%=i+1 %>"><%=i+1 %></a></li>
+              <% } %>
+          <% } %>
+          <% if (currPageNum === pageNum) { %>
+            <li class="disabled"><i class="material-icons">chevron_right</i></a></li>
+          <% } else { %>
+            <li class="waves-effect"><a href="/manage/editList/page/<%=currPageNum + 1  %>"><i class="material-icons">chevron_right</i></a></li>
+            <% } %>
+          
+        <% } %>
+      </ul>
+</div>
+
+<%- include("partials/manageFooter.ejs") %>

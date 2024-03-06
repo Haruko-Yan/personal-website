@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.route) { %>
+
+    <div id="success-cover"></div>
+    <div class="success" class="container">
+        <p>successful!</p>
+    </div>
+    <div id="time-prompt">
+        <span id="time">3</span>
+        <span>s before redirect to <%=pageName %> page</span>
+    </div>
+
+
+<script>
+    var i = 3;
+        setInterval(timer, 1000)
+        function timer() {
+            i--;
+            if (i > 0) {
+                document.getElementById("time").innerHTML=i;
+            } else {
+                location.href= "/" + "<%=locals.route %>";
+            }
+        }
+</script>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

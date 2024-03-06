@@ -1,0 +1,165 @@
+.sidebar {
+    background-color: black;
+    color: white;
+    top: 64px;
+    width: 250px;
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+nav {
+    top: 0;
+    background-color: rgb(74, 70, 70);
+}
+
+nav, .sidebar {
+    position: fixed;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+label {
+    font-size: 1rem;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+.nav-container {
+    height: 100%;
+    width: 93%;
+    margin: 0 auto;
+}
+
+.nav-btn {
+    float: left;
+    height: 64px;
+}
+
+.nav-btn a, .nav-btn a i{
+    height: 64px;
+    display: inline-block;
+}
+
+.nav-btn a:hover {
+    background-color:rgba(6, 100, 50, 0.467);
+}
+
+.nav-btn a {
+    padding: 0 15px;
+    transition: background-color 0.5s;
+}
+
+.main-page-link {
+    font-size: 25px;
+}
+
+.sidebar-bottom ul {
+    margin-top: 20px;
+}
+
+.sidebar-bottom li {
+    text-align: center;
+    height: 60px;
+}
+
+.sidebar-bottom li a {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    height: 100%;
+    line-height: 60px;
+}
+
+.sidebar-bottom li a:hover {
+    color:antiquewhite;
+}
+
+.sidebar-bottom li a span {
+    margin-left: 10px;
+}
+
+
+
+.container {
+    width: 100%;
+    padding-left: 230px;
+    padding-top: 100px;
+}
+
+.chip .input {
+    height: 30px;
+}
+
+.text {
+    height: 400px;
+    border-radius: 0%;
+}
+
+.form-control {
+    border-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.article-row {
+    display: flex;
+    align-items: center;
+}
+
+.article-row .article-item {
+    flex-basis: 50%;
+}
+
+.article-row .article-item .title {
+    font-size: 1.5rem;
+}
+
+.oper-item {
+    margin-top: 20px;
+}
+
+.oper-item a {
+    color: burlywood;
+}
+
+.oper-item .right-side {
+    float: right;
+}
+
+.oper-item .right-side a {
+    margin: 0 5px;
+}
+
+.article-row .verticle-line {
+    height: 50px;
+    border-left: 1px solid #6c6c6c;
+    margin: 0 60px;
+}
+
+.artlist .horizontal-line {
+    border-top: 1px solid #6c6c6c;
+    margin: 20px auto;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.text-button {
+    float: right;
+}

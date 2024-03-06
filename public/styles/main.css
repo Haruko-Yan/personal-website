@@ -1,0 +1,502 @@
+body {
+    background-color: rgba(237, 235, 235, 0.897);
+}
+
+main {
+    min-height: 700px;
+    top: 64px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#mainPage-cover {
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+#aboutPage-cover {
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    height: 60vh;
+    padding-top: 60px;
+}
+
+#main-link {
+    position: absolute;
+    top: 55%;
+}
+
+#main-link a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    border-radius: 30px;
+    color: white;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: background-color 0.5s;
+}
+
+#main-link a:hover {
+    background-color: red;
+}
+
+#main-link a i {
+    padding-right: 5px;
+}
+
+#motto {
+    position: absolute;
+    width: 40%;
+    top: 40%;
+    font-size: 2em;
+    font-family: "Lucida Console";
+    margin: 0 auto;
+    text-align: center;
+    color: bisque;
+}
+
+#recom-title {
+    display: flex;
+    box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);
+    background-color: white;
+    font-size: 35px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New';
+    border-radius: 10px;
+    height: 60px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -10px;
+    color: black;
+}
+
+#about-title {
+    position: absolute;
+    width: 40%;
+    top: 25%;
+    font-size: 4em;
+    font-family: "Lucida Console";
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(225, 174, 110);
+}
+
+#avatar {
+    display: flex;
+    justify-content: center;
+}
+
+#avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -60px;
+}
+
+#author-info {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#author-name {
+    font-size: 2rem;
+}
+
+#author-role {
+    margin-top: 0.5rem;
+    color:darkgray;
+}
+
+#self-intro {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 70px 0 30px;
+}
+
+.projects,.skills {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.projects .icon {
+    display: block;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 20px auto;
+}
+
+.projects .project-title {
+    color: black;
+    font-size: 20px;
+}
+
+.projects .project-desc {
+    margin-top: 10px;
+    color: grey;
+}
+
+
+
+.skills button {
+    margin-bottom: 10px;
+}
+
+#recom-area {
+    width: 70%;
+    margin: 20px auto 0;
+    box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.content {
+    box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);
+    background-color: white;
+    border-radius: 10px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: -50px;
+    padding-bottom: 20px;
+}
+
+.artlist {
+    padding-top: 40px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.container {
+    background-color:black;
+    width: 100% !important;
+    padding-bottom: 20px;
+}
+
+.intro {
+    display: flex;
+    background-image: url("/images/background_2.jpg");
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding-top: 60px;
+}
+
+.page-title {
+    width: 30%;
+    border-width: 3.5px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.page-title span {
+    font-size: 4rem;
+    font-family: "Lucida Console";
+    color: white;
+}
+
+img {
+    height: 200px;
+    width: 300px;
+}
+
+h1 {
+    color: green;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(58, 145, 148);
+    z-index: 1;
+}
+
+.scroll-top {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.nav-btn a {
+    padding: 0 15px;
+    color: white;
+    transition: background-color 0.5s;
+    text-decoration: none;
+}
+
+.nav-btn a:hover {
+    background-color:rgba(6, 100, 50, 0.467);
+}
+
+.nav-btn a, .nav-btn i {
+    display: inline-block;
+    line-height: 64px;
+    height: 64px;
+}
+
+.nav-container {
+    position: relative;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+.main-page-link {
+    font-size: 25px;
+}
+
+.brand-logo {
+    position: absolute;
+    height: 100%;
+    border: 0px;
+}
+
+.nav-right {
+    position: absolute;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    right: 0%;
+}
+
+.nav-btn {
+    list-style-type: none;
+    height: 50px;
+    float: left;
+}
+
+.not-shown {
+    display: none;
+}
+
+.bi-list {
+    font-size: 30px;
+    float: left;
+}
+
+
+.offcanvas.offcanvas-start {
+    width: 250px;
+}
+
+.sidebar-bottom {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    display: block;
+    line-height: 50px;
+    height: 50px;
+}
+
+.sidebar-item a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.5s;
+}
+
+.sidebar-item a:hover {
+    background-color:lightgrey
+}
+
+.sidebar-item a i {
+    position: absolute;
+    left: 10%;
+}
+
+.sidebar-item a span {
+    position: relative;
+    left: 40%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col.s12.m7 {
+    min-width: 330px;
+    max-width: 330px;
+    min-height: 550px;
+    max-height: 550px;
+    margin-left: 0px;
+}
+
+.card {
+    height: 470px;
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .card-content {
+    position: relative;
+    height: 215px;
+}
+
+.card .card-content p {
+    height: 160px;
+    overflow: hidden;
+}
+
+.card .card-content:before {
+    content: "...";
+    position: absolute;
+    right: 12px;
+    bottom: 39px;
+}
+
+.card .card-action {
+    font-size: small;
+}
+
+.card .card-action a {
+    float: right;
+    margin-right: 0 !important;
+}
+
+.title-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    
+}
+
+.title-area .title {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.897);
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+}
+
+
+
+.article-area {
+    background-color: wheat;
+    border-radius: 10px;
+    min-height: 500px;
+}
+
+.info-item {
+    display: inline-block;
+    padding: 10px;
+}
+
+.info-item span {
+    padding-left: 8px;
+}
+
+.article-tags {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.article-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.text {
+    margin: 30px 30px 0 30px;
+    padding: 10px;
+}
+
+#login-container {
+    padding-top: 35px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+#login-intro {
+    background-image: url('/images/background_1.jpg');
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#login-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success {
+    margin-top: -20vh;
+    text-align: center;
+    font-size: 5vw;
+    color: green;
+}
+
+
+
+#success-cover {
+    background-image: url('/images/speed_line.jpg');
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#time-prompt {
+    margin-top: 30vh;
+    font-size: 3vw;
+    text-align: center;
+}
+
+#time {
+    color: green;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.footer-container .running-time {
+    font-size: 15px;
+    margin-bottom: 0;
+}

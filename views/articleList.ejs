@@ -1,0 +1,64 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+    <div class="intro">
+          <div class="page-title">
+            <span>Blog List</span>
+          </div>
+    </div>
+    <div class="bottom-container">
+      <div class="content">
+        <div class="artlist">
+          <div class="row">
+            <% if (locals.articles) { %>
+              <% const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; %>
+              <% articles.forEach(article => { %>
+                <% const rNum = Math.floor(Math.random() * 10 + 1) %>
+                <div class="col s12 m7">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="/images/cover_<%=rNum %>.jpg">
+                      <span class="card-title">
+                        <%=article.title %>
+                      </span>
+                    </div>
+                    <div class="card-content">
+                      <p><%=article.info %></p>
+                    </div>
+                    <div class="card-action">
+                      <i class="bi bi-calendar"></i>
+                      <span><%=month[article.date.getMonth()]%> <%=article.date.getDate()%> <%=article.date.getFullYear()%></span>
+                      <a href="/blog/<%=article._id.toString() %>">READ MORE</a>
+                    </div>
+                  </div>
+                </div>
+              <% }); %>
+            <% } %>
+          </div>
+        </div>
+        <ul class="pagination">
+          <% if (locals.articles && typeof pageNum !== 'undefined' && locals.currPageNum !== 'undefined') { %>
+            <% if (currPageNum === 1) { %>
+              <li class="disabled"><i class="material-icons">chevron_left</i></a></li>
+            <% } else { %>
+              <li class="waves-effect"><a href="/blog/page/<%=currPageNum - 1  %>"><i class="material-icons">chevron_left</i></a></li>
+              <% } %>
+            <% for (let i = 0; i < pageNum; i++) { %>
+              <% if (currPageNum === (i + 1)) { %>
+                <li class="active"><a href="/blog/page/<%=i+1 %>"><%=i+1 %></a></li>
+              <% } else { %>
+                <li class="waves-effect"><a href="/blog/page/<%=i+1 %>"><%=i+1 %></a></li>
+                <% } %>
+            <% } %>
+            <% if (currPageNum === pageNum) { %>
+              <li class="disabled"><i class="material-icons">chevron_right</i></a></li>
+            <% } else { %>
+              <li class="waves-effect"><a href="/blog/page/<%=currPageNum + 1  %>"><i class="material-icons">chevron_right</i></a></li>
+              <% } %>
+            
+          <% } %>
+        </ul>
+      </div>
+  </div>
+</main>
+<%- include("partials/footer.ejs") %>
