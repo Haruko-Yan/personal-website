@@ -45,22 +45,26 @@
       </nav>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="side-bar">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <a id="sidebar-title" href="/">
+            <i class="bi bi-sun"></i>
+            <span>晴's blog</span>
+          </a>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-          <div>
-            Make life better
+          <div id="sidebar-motto">
+            <i class="bi bi-battery-charging"></i>
+            <span>Make life better</span>
           </div>
           <div>
             <ul class="sidebar-bottom">
               <li class="sidebar-item">
-                <a href="#">
+                <a href="/blog">
                   <i class="bi bi-book-half"></i>
                   <span>Blog</span>
                 </a>
               </li>
               <li class="sidebar-item">
-                <a href="#">
+                <a href="/about">
                   <i class="bi bi-file-earmark-person-fill"></i>
                   <span>About</span>
                 </a>
@@ -104,7 +108,7 @@
                     <% } %>
                 </div>
             </div>
-            <div class="text">
+            <div class="article-text">
                 <%- article.text %>
             </div>
         </div>

@@ -163,3 +163,43 @@ a {
 .text-button {
     float: right;
 }
+
+@media only screen and (max-width: 600px) {
+    nav {
+      height: 64px;;
+    }
+    .sidebar {
+        width: 170px;
+    }
+    .sidebar-bottom li a {
+        font-size: 17px;
+    }
+    .container {
+        padding-left: 180px;
+    }
+  }
+
+
+@media only screen and (max-width: 550px) {
+    .sidebar {
+        width: 140px;
+    }
+    .sidebar-bottom li a {
+        font-size: 15px;
+    }
+    .container {
+        padding-left: 160px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .sidebar {
+        width: 100px;
+    }
+    .sidebar-bottom li a {
+        font-size: 12px;
+    }
+    .container {
+        padding-left: 120px;
+    }
+}

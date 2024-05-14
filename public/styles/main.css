@@ -54,7 +54,7 @@ a {
     padding-right: 5px;
 }
 
-#motto {
+#mainPage-motto {
     position: absolute;
     width: 40%;
     top: 40%;
@@ -225,11 +225,6 @@ a {
     color: white;
 }
 
-img {
-    height: 200px;
-    width: 300px;
-}
-
 h1 {
     color: green;
 }
@@ -303,9 +298,37 @@ nav {
     float: left;
 }
 
-
 .offcanvas.offcanvas-start {
     width: 250px;
+}
+
+.offcanvas-header {
+    background-color: rgb(44, 162, 123);
+}
+
+#sidebar-menu {
+    height: 62px;
+}
+
+#sidebar-title {
+    color: #fff;
+}
+
+#sidebar-motto {
+    text-align: center;
+    font-size: 12px;
+    margin: 15px 0;
+}
+
+#sidebar-motto i {
+    color: rgb(44, 162, 123);
+}
+
+#side-bar .horizontal-line {
+    margin: 0 auto;
+    width: 90%;
+    border-top: 1px solid;
+    border-color: grey;
 }
 
 .sidebar-bottom {
@@ -318,6 +341,7 @@ nav {
     display: block;
     line-height: 50px;
     height: 50px;
+    font-size: 13px;
 }
 
 .sidebar-item a {
@@ -326,6 +350,10 @@ nav {
     text-decoration: none;
     color: black;
     transition: background-color 0.5s;
+}
+
+.sidebar-item a i {
+    color: rgb(142, 23, 193);
 }
 
 .sidebar-item a:hover {
@@ -359,10 +387,14 @@ nav {
     height: 470px;
 }
 
-.card-image {
+.card .card-image {
     height: 200px;
     background-size: cover;
     background-position: center;
+}
+
+.card .card-image img {
+    height: 200px;
 }
 
 .card .card-content {
@@ -437,9 +469,14 @@ nav {
     border-width: 2px;
 }
 
-.text {
+.article-text {
     margin: 30px 30px 0 30px;
     padding: 10px;
+}
+
+.article-text img {
+    max-width: 80%;
+    height: auto;
 }
 
 #login-container {
@@ -500,3 +537,35 @@ nav {
     font-size: 15px;
     margin-bottom: 0;
 }
+
+@media only screen and (max-width: 800px) {
+    #side-bar {
+      width: 150px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #sidebar-menu {
+        height: 54px;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    #mainPage-motto {
+      width: 60%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #recom-title {
+      width: 100%;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    #mainPage-motto {
+      width: 90%;
+    }
+}
+
+

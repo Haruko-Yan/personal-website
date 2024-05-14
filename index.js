@@ -9,27 +9,9 @@ import session from 'express-session';
 import passport from 'passport';
 import passportLocalMongoose from 'passport-local-mongoose';
 import env from "dotenv";
-import multer from "multer";
 import fs from "fs";
 
-
 const __dirname = dirname(fileURLToPath(import.meta.url)); 
-
-
-// configure the path and name of the uploaded images
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        const dir = 'public/uploadedImages/' + req.body.author + '/' + req.body.title + '/';
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-        cb(null, 'public/uploadedImages/' + req.body.author + '/' + req.body.title + '/');
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    }
-  });
-const upload = multer({ storage: storage })
 
 const app = express();
 
@@ -98,13 +80,6 @@ passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-// Use strict option to add new field to the schema if the schema above doesn't contain the new field
-// var a = await Article.updateMany({}, {editDate: [new Date()]}, {strict: false});
-// var b = await Article.updateMany({title: { $in: ['test 1', 'test 2', 'test 3'] }}, {recommend: true}, {strict: false});
-
-// const articles = await findAllArticles();
-// console.log(articles[articles.length - 1].tag.toString().replaceAll(",", " "))
 
 // Main page
 app.get("/", async (req, res) => {
@@ -234,18 +209,6 @@ app.get("/blog/page/:pageId", async (req, res) => {
     res.render(__dirname + "/views/articleList.ejs", {articles: articles, pageNum: pageNum, currPageNum: currPageNum, startTime: startTime});
 });
 
-    // Parse url for id
-    // var fullUrl = new URL(req.protocol + '://' + req.get("host") + req.originalUrl);
-    // const id = fullUrl.searchParams.get('id');
-
-    // var test = findArticles();
-    // console.log(test);
-    // if (findArticles()[3] === fullUrl.searchParams.get('id')) {
-    //     console.log("yes");
-    // } else {
-    //     console.log("no");
-    // }
-
 // Detail of the blog
 app.get("/blog/:article_id", async (req, res) => {
     const filter = {_id: req.params.article_id};
@@ -326,38 +289,6 @@ app.get("/manage/editList/edit", async (req, res) => {
     res.render(__dirname + "/views/edit.ejs", {article: article});
 });
 
-// Update the content of the article
-app.post("/manage/editList/edit/:articleId", async (req, res) => {
-    if (req.isAuthenticated()){
-        const article = await Article.findOne({_id: req.params.articleId});
-        article.editDate.push(new Date());
-        await Article.updateOne({_id: req.params.articleId}, 
-            {author: req.body.author, title: req.body.title, tag: req.body.tag, text: req.body.text, editDate: article.editDate});
-        res.render(__dirname + "/views/success.ejs", {pageName: "Edit List", route: "manage/editList", startTime: originalStartTime});
-    } else {
-        res.redirect("/login");
-    }
-});
-
-app.post("/publish", upload.array('images'), (req, res) => {
-    var result = req.body;
-    var tags = req.body.tag.split(" ");
-    // make the every tag unique
-    const uniqueTag = tags.filter((obj, index) => {
-        return index === tags.findIndex(o => obj === o);
-    });
-    const article = new Article({
-        author: result.author,
-        title: result.title,
-        tag: uniqueTag,
-        text: result.text,
-        date: new Date(),
-        hits: 0
-    });
-    article.save();
-    res.render(__dirname + "/views/success.ejs", {pageName: "Management", route: "manage/write", startTime: originalStartTime});
-});
-
 app.listen(port, () => {
     console.log("Server running on port " + port);
 });
@@ -372,9 +303,3 @@ async function findRecommends() {
     const all= await Article.find({recommend: true});
     return all;
 }
-
-/* function urlParser(req, res, next) {
-    const paramString = req.originalUrl.slice(req.originalUrl.indexOf("?") + 1);
-    paramString.split("&")
-    next();
-} */

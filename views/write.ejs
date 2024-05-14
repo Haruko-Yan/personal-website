@@ -1,7 +1,7 @@
 <%- include("partials/manageHeader.ejs") %>
 
 <div class="container">
-    <form action="/publish" enctype="multipart/form-data" method="post">
+    <form action="http://image.ziqingyan.tech/publish" enctype="multipart/form-data" method="post">
         <div class="mb-3">
             <label for="author" class="form-label">Author</label>
             <input type="text" class="form-control author" id="author" value="Ziqing Yan" name="author">
@@ -19,7 +19,7 @@
             <label for="text" class="form-label">Text</label>
             <textarea class="form-control text" id="text" name="text" rows="3"></textarea>
             <div class="mb-3">
-                <label for="uploadedImages" class="form-label">Multiple files input example</label>
+                <label for="uploadedImages" class="form-label">Upload your images:</label>
                 <input class="form-control uploadedImages" type="file" id="uploadedImages" name="images" accept="image/*" multiple>
             </div>
         </div>
