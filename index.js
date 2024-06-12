@@ -127,7 +127,7 @@ app.post("/register", function(req, res) {
 });
 
 app.get("/login", (req, res) => {
-    res.render(__dirname + "/views/login.ejs", {startTime: startTime});
+    res.render(__dirname + "/views/login.ejs", {startTime: originalStartTime});
 });
 
 app.post("/login", (req, res) => {
@@ -159,7 +159,7 @@ app.get("/success", (req, res) => {
     if (!req.query.route) {
         res.redirect("/");
     } else {
-        res.render("success.ejs", {route: req.query.route, startTime: startTime});
+        res.render("success.ejs", {route: req.query.route, startTime: originalStartTime});
     }
 });
 
@@ -182,7 +182,7 @@ app.get("/blog", async (req, res) => {
         // Delete the Enter keys
         article.info = pureText.replace(/(\r\n|\n|\r)/gm, "").substring(0, 200);
     });
-    res.render(__dirname + "/views/articleList.ejs", {articles: articles, pageNum: pageNum, currPageNum: 1, startTime: startTime});
+    res.render(__dirname + "/views/articleList.ejs", {articles: articles, pageNum: pageNum, currPageNum: 1, startTime: originalStartTime});
 });
 
 // Pagination
@@ -206,7 +206,7 @@ app.get("/blog/page/:pageId", async (req, res) => {
         // Delete the Enter keys
         article.info = pureText.replace(/(\r\n|\n|\r)/gm, "").substring(0, 200);
     });
-    res.render(__dirname + "/views/articleList.ejs", {articles: articles, pageNum: pageNum, currPageNum: currPageNum, startTime: startTime});
+    res.render(__dirname + "/views/articleList.ejs", {articles: articles, pageNum: pageNum, currPageNum: currPageNum, startTime: originalStartTime});
 });
 
 // Detail of the blog
