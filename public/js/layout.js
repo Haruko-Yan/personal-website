@@ -44,4 +44,6 @@ $(window).on('scroll', function() {
     }
 })
 
-
+$("recom-title").on("load", function(){
+    ("#recom-title").css("animation", "movingTopToBottom 0.4s");
+});
